@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<name>Restore TT Tag</name>
+	<id>SagaMusix:RestoreTT</id>
+	<type>modification</type>
+	<version>1.0</version>
+
+	<install for="2.1 RC1 - 2.1.99">
+		<require-file name="RestoreTT.php" destination="$sourcedir" />
+		<hook hook="integrate_pre_load" function="restore_tt" file="$sourcedir/RestoreTT.php" />
+	</install>
+	<uninstall for="2.1 RC1 - 2.1.99">
+		<hook hook="integrate_pre_load" function="restore_tt" file="$sourcedir/RestoreTT.php" reverse="true" />
+		<remove-file name="$sourcedir/RestoreTT.php" />
+	</uninstall>
+</package-info>
